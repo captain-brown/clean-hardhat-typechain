@@ -6,7 +6,7 @@ import { HardhatUserConfig } from "hardhat/types";
 
 const config: HardhatUserConfig = {
   solidity: {
-    compilers: [{ version: "0.5.6" }],
+    compilers: [{ version: "0.8.6" }],
   },
   defaultNetwork: "hardhat",
   networks: {

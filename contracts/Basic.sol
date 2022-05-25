@@ -1,4 +1,6 @@
-pragma solidity 0.5.6;
+// SPDX-License-Identifier: MIT
+
+pragma solidity 0.8.6;
 
 contract Basic {
     string public name;
@@ -7,7 +9,7 @@ contract Basic {
     event UpdateInfo(address sender, string name, uint256 balance);
     event UpdateInfoPayable(address sender, string name, uint256 balance);
 
-    constructor(string memory _name, uint256 _balance) public {
+    constructor(string memory _name, uint256 _balance) {
         name = _name;
         balance = _balance;
     }
@@ -36,7 +38,7 @@ contract Basic {
         public
         payable
     {
-        require(msg.value == 1, "need vaule");
+        require(msg.value == 1, "diff value");
         name = _name;
         balance = _balance;
 

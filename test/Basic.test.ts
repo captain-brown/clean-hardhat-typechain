@@ -49,5 +49,8 @@ describe("Basic", () => {
     info = await basic.getInfo();
     expect(info.rName).to.be.equal(afterName2);
     expect(info.rBalance).to.be.equal(afterBalance2);
+
+    await expect(basic.updateInfoPayable(afterName2, afterBalance2, { value: BigNumber.from(2) }))
+      .to.revertedWith("diff value");
   });
 });

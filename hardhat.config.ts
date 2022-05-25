@@ -15,6 +15,21 @@ const config: HardhatUserConfig = {
         count: 10,
       },
     },
+    baobab: {
+      url: process.env.BAOBAB_URL,
+      httpHeaders: {
+        Authorization:
+          'Basic ' +
+          Buffer.from(
+            process.env.KAS_ACCESS_KEY + ':' + process.env.KAS_SECRET_KEY,
+          ).toString('base64'),
+        'x-chain-id': process.env.CHAIN_ID || '1001',
+      },
+      accounts: [process.env.PRIVATEKEY || ''],
+      chainId: 1001,
+      gas: 8500000,
+      gasPrice: 250000000000,
+    },
   },
   mocha: {
     timeout: 400000,

@@ -1,14 +1,14 @@
-import "@nomiclabs/hardhat-etherscan";
-import "@nomiclabs/hardhat-waffle";
-import "dotenv/config";
-import "hardhat-typechain";
-import { HardhatUserConfig } from "hardhat/types";
+import '@nomiclabs/hardhat-etherscan';
+import '@nomiclabs/hardhat-waffle';
+import 'dotenv/config';
+import 'hardhat-typechain';
+import { HardhatUserConfig } from 'hardhat/types';
 
 const config: HardhatUserConfig = {
   solidity: {
-    compilers: [{ version: "0.8.6" }],
+    compilers: [{ version: '0.8.6' }],
   },
-  defaultNetwork: "hardhat",
+  defaultNetwork: 'hardhat',
   networks: {
     hardhat: {
       accounts: {

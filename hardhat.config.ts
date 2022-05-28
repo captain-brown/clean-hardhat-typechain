@@ -1,10 +1,29 @@
+import { HardhatUserConfig } from 'hardhat/types';
+
 import '@nomiclabs/hardhat-etherscan';
+import '@nomiclabs/hardhat-ethers';
 import '@nomiclabs/hardhat-waffle';
 import 'dotenv/config';
 import 'hardhat-typechain';
-import { HardhatUserConfig } from 'hardhat/types';
+import 'hardhat-deploy-ethers';
+import 'hardhat-deploy';
+import '@symfoni/hardhat-react';
+import 'hardhat-typechain';
+import '@typechain/ethers-v5';
+
+/*
+task('accounts', 'Prints the list of accounts', async (args, hre) => {
+  const accounts = await hre.ethers.getSigners();
+  for (const account of accounts) {
+    console.log(account.address);
+  }
+});
+*/
 
 const config: HardhatUserConfig = {
+  react: {
+    providerPriority: ['web3modal', 'hardhat'],
+  },
   solidity: {
     compilers: [{ version: '0.8.6' }],
   },
@@ -12,6 +31,7 @@ const config: HardhatUserConfig = {
   networks: {
     hardhat: {
       accounts: {
+        mnemonic: 'test test test test test test test test test test test junk',
         count: 10,
       },
     },

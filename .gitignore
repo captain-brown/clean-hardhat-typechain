@@ -108,3 +108,5 @@ cache
 artifacts
 typechain
 merge
+frontend/src/hardhat
+deployments
